@@ -1,0 +1,14 @@
+name: CI Demo Workflow
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Change hello_world permissions
+      run: chmod +x hello_world.sh
+    - name: Run hello_world script
+      run: ./hello_world.sh
